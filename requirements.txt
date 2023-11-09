@@ -1,5 +1,2 @@
-altair
-numpy
-pandas
-pydeck
-streamlit
+#requirements.txt
+snowflake-connector-python
