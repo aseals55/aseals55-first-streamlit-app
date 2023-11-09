@@ -37,9 +37,6 @@ try:
     back_from_funtion = get_fruityvice_data(fruit_choice)
     streamlit.dataframe(back_from_funtion)
 
-except URLError as e:
-  streamlit.error()
-
 streamlit.header("The fruit load list contains:")
 #Snowflake related functions
 def get_fruit_load_list():
@@ -52,6 +49,9 @@ if streamlit.button('Get fruit load list'):
    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])  
    my_data_row = get_fruit_load_list()
    streamlit.dataframe(my_data_row)
+
+except URLError as e:
+  streamlit.error()
 
 streamlit.stop()
 
